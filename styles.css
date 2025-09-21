@@ -1,0 +1,209 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #022343;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .All {
+            background: rgb(12, 12, 50);
+            padding: 20px;
+            border-bottom: 49px orange solid;
+            border-top: 39px orange solid;
+            border-radius: 40px;
+            width: 95%; /* Adjusted for better mobile fit */
+            max-width: 600px;
+            min-height: 200px;
+            transition: 0.6s ease-in;
+        }
+
+        .All:hover {
+            transform: scale(1.05); /* Reduced scale for a less jarring effect */
+        }
+
+        h3 {
+            font-weight: 600;
+            margin: 15px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: wheat;
+            text-align: center;
+        }
+
+        form {
+            width: 100%; /* Made form width flexible */
+            max-width: 400px; /* Added max-width for better desktop display */
+            margin: 0 auto; /* Center the form */
+        }
+
+        form .form-group {
+            display: flex;
+            flex-direction: column; /* Stack elements on small screens */
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        form .form-group label {
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            min-width: 100px;
+            color: white;
+            margin-bottom: 5px; /* Added margin for stacking */
+        }
+
+        form .form-group input {
+            font-size: 16px;
+            padding: 5px 10px;
+            outline: none;
+            border: none;
+            background-color: #f1f1f1;
+            border-radius: 2px;
+            width: 100%; /* Made input fields take full width */
+        }
+
+        form button {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            border: none;
+            background-color: green;
+            border-radius: 2px;
+            text-transform: uppercase;
+            margin: 15px auto;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            transition: 1s ease-in;
+            background: aqua;
+        }
+
+        table {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table td, table th {
+            border: 1px solid grey;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        table thead tr th {
+            border-color: grey;
+            font-weight: 400;
+            background-color: orange;
+            color: #fff;
+        }
+
+        table td button {
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 5px 10px;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            background-color: green;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Tooltip styles (kept as-is but with a cursor pointer for usability) */
+        button::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: black;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            bottom: 115%;
+            left: 50%;
+            transform: translateY(50%);
+            border: 6px solid transparent;
+            border-top-color: black;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        button:hover::after,
+        button:hover::before {
+            opacity: 1;
+        }
+
+        #btn-sub {
+            background-color: #167e2e;
+        }
+
+        #btn-sub:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+
+        .btn-edit {
+            background-color: yellow;
+            color: black;
+        }
+
+        .btn-edit:hover {
+            background-color: rgb(255, 255, 45);
+            transform: scale(1.1);
+        }
+
+        .btn-dlt {
+            background-color: rgb(255, 9, 9);
+        }
+
+        .btn-dlt:hover {
+            background-color: orangered;
+            transform: scale(1.1);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 600px) {
+            form .form-group {
+                flex-direction: row; /* Return to horizontal layout on larger screens */
+                align-items: center;
+            }
+
+            form .form-group label {
+                margin-bottom: 0;
+            }
+
+            form .form-group input {
+                flex: 1; /* Allow input to grow to fill space */
+            }
+        }
